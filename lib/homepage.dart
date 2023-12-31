@@ -42,56 +42,58 @@ class _DeckListState extends State<DeckList> {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final dbHelper = context.watch<DBHelper>();
-    final deckTotalAmounts = dbHelper.totalAmount;
-    final screenWidth = MediaQuery.of(context).size.width;
+@override
+Widget build(BuildContext context) {
+  final dbHelper = context.watch<DBHelper>();
+  final deckTotalAmounts = dbHelper.totalAmount;
+  final screenWidth = MediaQuery.of(context).size.width;
 
-    int crossAxisCount = (screenWidth / 200).floor(); 
-    crossAxisCount = crossAxisCount > 0 ? crossAxisCount : 1;
+  int crossAxisCount = (screenWidth / 200).floor();
+  crossAxisCount = crossAxisCount > 0 ? crossAxisCount : 1;
 
-    double aspectRatio = 3;
+  double aspectRatio = 3;
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black, 
-        title: Text(
-          'Groups',
-          style: TextStyle(
-            color: Colors.white, 
-          ),
+  return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Colors.black,
+      title: Text(
+        'Groups',
+        style: TextStyle(
+          color: Colors.white,
         ),
-        actions: [],
       ),
-      body: GridView.count(
-        crossAxisCount: crossAxisCount,
-        padding: const EdgeInsets.all(8),
-        mainAxisSpacing: 8, 
-        crossAxisSpacing: 8, 
-        childAspectRatio: aspectRatio,
-        children: List.generate(decks.length, (index) => Card(
-          elevation: 4, 
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10), 
-          ),
-          color: Colors.lightGreen,
-          child: Container(
-            alignment: Alignment.center,
-            child: Stack(
-              children: [
-                InkWell(onTap: () {
-                  navigateToFlashcardsScreen(decks[index]);
-                }),
+      actions: [],
+    ),
+    body: Stack(
+      children: [
+        GridView.count(
+          crossAxisCount: crossAxisCount,
+          padding: const EdgeInsets.all(8),
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          childAspectRatio: aspectRatio,
+          children: List.generate(decks.length, (index) => Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            color: Colors.lightGreen,
+            child: Container(
+              alignment: Alignment.center,
+              child: Stack(
+                children: [
+                  InkWell(onTap: () {
+                    navigateToFlashcardsScreen(decks[index]);
+                  }),
                   Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(decks[index].title,style: TextStyle(fontSize: 20)),
+                        Text(decks[index].title, style: TextStyle(fontSize: 20)),
                         Text(
                           '${deckTotalAmounts[decks[index].id] != null && deckTotalAmounts[decks[index].id]! > 0
-                            ? 'Total Expense: ${deckTotalAmounts[decks[index].id]!}'
-                            : 'No Expense'}',
+                              ? 'Total Expense: ${deckTotalAmounts[decks[index].id]!}'
+                              : 'No Expense'}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
@@ -99,53 +101,75 @@ class _DeckListState extends State<DeckList> {
                       ],
                     ),
                   ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: IconButton(
-                    icon: const Icon(Icons.edit),
-                    onPressed: () {
-                      navigateToEditDeck(decks[index]);
-                    },
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: IconButton(
+                      icon: const Icon(Icons.edit),
+                      onPressed: () {
+                        navigateToEditDeck(decks[index]);
+                      },
+                    ),
                   ),
+                ],
+              ),
+            ),
+          )),
+        ),
+        if (decks.isEmpty)
+          Positioned(
+            bottom: 90,
+            right: 16,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: EdgeInsets.all(8),
+              child: Text(
+                "'Click here to add a new group'",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
                 ),
-              ],
+              ),
             ),
           ),
-        )),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          navigateToAddDeck();
-        },
-        child: const Icon(Icons.add),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.currency_exchange),
-            label: 'Currencies',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Friends', 
-          ),          
-        ],
-        currentIndex: 1,
-        onTap: (index) {
-          if (index == 0) {
-            navigateToNewPage();
-          } else if(index == 2){
-            navigateToFriends();
-          }
-        },
-      ),
-    );
-  }
+      ],
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        navigateToAddDeck();
+      },
+      child: const Icon(Icons.add),
+    ),
+    bottomNavigationBar: BottomNavigationBar(
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.currency_exchange),
+          label: 'Currencies',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.people),
+          label: 'Friends',
+        ),
+      ],
+      currentIndex: 1,
+      onTap: (index) {
+        if (index == 0) {
+          navigateToNewPage();
+        } else if (index == 2) {
+          navigateToFriends();
+        }
+      },
+    ),
+  );
+}
+
 
   void navigateToFriends() {
     Navigator.push(

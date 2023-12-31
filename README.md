@@ -8,23 +8,23 @@ The Expense Tracker App is a mobile application designed to help users manage th
 
 ## 2. Features:
 
-## Group Management:
+### Group Management:
 
 Create, edit, and delete groups for organizing expenses.
 View the total expense for each group.
 
-## Deck Management:
+### Deck Management:
 
 Add, edit, and delete decks within a group.
 Track the total expense for each deck.
 
-## Flashcard Management:
+### Flashcard Management:
 
 Record individual expenses using flashcards.
 Assign expenses to specific friends or participants.
 View and edit details of each flashcard.
 
-## Friend Management:
+### Friend Management:
 
 Add, edit, and delete friends.
 View the total amount owed or owed by each friend.

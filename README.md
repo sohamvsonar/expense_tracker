@@ -8,29 +8,29 @@ The Expense Tracker App is a mobile application designed to help users manage th
 
 ## 2. Features:
 
-# Group Management:
+## Group Management:
 
 Create, edit, and delete groups for organizing expenses.
 View the total expense for each group.
 
-# Deck Management:
+## Deck Management:
 
 Add, edit, and delete decks within a group.
 Track the total expense for each deck.
 
-# Flashcard Management:
+## Flashcard Management:
 
 Record individual expenses using flashcards.
 Assign expenses to specific friends or participants.
 View and edit details of each flashcard.
 
-# Friend Management:
+## Friend Management:
 
 Add, edit, and delete friends.
 View the total amount owed or owed by each friend.
 Track expenses with friends.
 
-My application has the following high-level features:
+## My application has the following high-level features:
 
 1. There are at least 3 separate screens/pages in my application, each of which implemented as a separate widget. One of these pages is set to be the default "home" page that is displayed when the application is first launched. Navigation between pages are implemented using the standard Flutter mechanisms (e.g., `Navigator`, `TabBar`, `BottomNavigationBar`, etc.).
 2. All of the pages in my application are backed by a stateful widget, which in turn is backed by a custom model class. This model class encapsulates the data that is displayed/manipulated on the page. I have choose these mechanisms (e.g., `setState`, `ChangeNotifier`, `Provider`, etc.) to update the UI on model object updates.
@@ -38,7 +38,7 @@ My application has the following high-level features:
 4. My app also access some data from an external source (e.g., a RESTful API) and displays it in the app.
 
 
-### 3 External packages
+### 3. External packages
 
 I have included the following packages in the `pubspec.yaml` file:
 
@@ -54,35 +54,34 @@ I have included the following packages in the `pubspec.yaml` file:
 - [`test`](https://pub.dev/packages/test): a library that provides a set of utilities for writing unit tests
 
 * Getting Started
-# Prerequisites
+## Prerequisites
 1. Flutter SDK
 2. Dart SDK
 3. SQLite
 
-# Installation
+## Installation
 1. Clone the repository.
-
-
-- git clone https://github.com/your-username/expense-tracker-app.git
+~ git clone (https://github.com/sohamsonar427/expense_tracker.git)
 
 2. Navigate to the project directory.
 
--cd expense-tracker-app
+~ cd expense-tracker-app
 
 3. Install dependencies.
 
-- flutter pub get
+~ flutter pub get
 
-# Usage
+## Usage
 Run the application.
 
-1. flutter run
-2. Explore different features within the app, create groups, decks, and flashcards, and track your expenses.
+~ flutter run
+
+- Explore different features within the app, create groups, decks, and flashcards, and track your expenses.
 
 ## Technologies Used
 * Flutter
 * Dart
 * SQLite
 
-# Contributing
+## Contributing
 If you'd like to contribute to this project, please follow the Contributing Guidelines.

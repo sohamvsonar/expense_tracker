@@ -5,6 +5,8 @@
 
 The Expense Tracker App is a mobile application designed to help users manage their expenses, track spending across different categories, and maintain a record of financial transactions. It provides an intuitive interface for creating and managing groups, decks, and flashcards, allowing users to organize their expenses efficiently. The expense tracker application which also has a currency converter feature where we can get the live rate of any currency, we can make groups of specific categories or trips where we can add the expense incurred in these groups. It saves the data using a sqflite database model, where all the data gets stored locally. We can also add friends in the friends tab, and it displays the amount owed to a friend. The live rates of the currency gets fetched from a API from the web. If you have any questions please feel free to reach me out via mail at soham.sonar427@gmail.com or on linked at https://www.linkedin.com/in/sohamsonar23/, Thank You!
 
+The Expense Tracker App is a mobile application designed to help users manage their expenses, track spending across different categories, and maintain a record of financial transactions. It provides an intuitive interface for creating and managing groups, decks, and flashcards, allowing users to organize their expenses efficiently. The expense tracker application which also has a currency converter feature where we can get the live rate of any currency, we can make groups of specific categories or trips where we can add the expense incurred in these groups. It saves the data using a sqflite database model, where all the data gets stored locally. We can also add friends in the friends tab, and it displays the amount owed to a friend. The live rates of the currency gets fetched from a API from the web. If you have any questions please feel free to reach me out via mail at soham.sonar427@gmail.com or on linked at https://www.linkedin.com/in/sohamsonar23/, Thank You!
+
 
 ## 2. Features:
 
@@ -38,7 +40,7 @@ My application has the following high-level features:
 4. My app also access some data from an external source (e.g., a RESTful API) and displays it in the app.
 
 
-### 3 External packages
+### 3. External packages
 
 I have included the following packages in the `pubspec.yaml` file:
 

@@ -63,7 +63,7 @@ I have included the following packages in the `pubspec.yaml` file:
 
 
     ``` 
-    git clone https://github.com/your-username/expense-tracker-app.git
+    git clone https://github.com/sohamvsonar/expense_tracker.git
 
 2. Navigate to the project directory.
 
